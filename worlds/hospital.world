@@ -1,0 +1,88 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="hospital">
+    <include><uri>model://ground_plane</uri></include>
+    <include><uri>model://sun</uri></include>
+
+    <model name="wall_north"><static>true</static><link name="link">
+      <pose>6 5 1.25 0 0 0</pose>
+      <collision name="c"><geometry><box><size>14 0.15 2.5</size></box></geometry></collision>
+      <visual name="v"><geometry><box><size>14 0.15 2.5</size></box></geometry></visual>
+    </link></model>
+
+    <model name="wall_south"><static>true</static><link name="link">
+      <pose>6 -5 1.25 0 0 0</pose>
+      <collision name="c"><geometry><box><size>14 0.15 2.5</size></box></geometry></collision>
+      <visual name="v"><geometry><box><size>14 0.15 2.5</size></box></geometry></visual>
+    </link></model>
+
+    <model name="wall_west"><static>true</static><link name="link">
+      <pose>-1 0 1.25 0 0 0</pose>
+      <collision name="c"><geometry><box><size>0.15 10 2.5</size></box></geometry></collision>
+      <visual name="v"><geometry><box><size>0.15 10 2.5</size></box></geometry></visual>
+    </link></model>
+
+    <model name="wall_east"><static>true</static><link name="link">
+      <pose>13 0 1.25 0 0 0</pose>
+      <collision name="c"><geometry><box><size>0.15 10 2.5</size></box></geometry></collision>
+      <visual name="v"><geometry><box><size>0.15 10 2.5</size></box></geometry></visual>
+    </link></model>
+
+    <model name="divider_top"><static>true</static><link name="link">
+      <pose>6 3 1.25 0 0 0</pose>
+      <collision name="c"><geometry><box><size>0.15 4 2.5</size></box></geometry></collision>
+      <visual name="v"><geometry><box><size>0.15 4 2.5</size></box></geometry></visual>
+    </link></model>
+
+    <model name="divider_bottom"><static>true</static><link name="link">
+      <pose>6 -3 1.25 0 0 0</pose>
+      <collision name="c"><geometry><box><size>0.15 4 2.5</size></box></geometry></collision>
+      <visual name="v"><geometry><box><size>0.15 4 2.5</size></box></geometry></visual>
+    </link></model>
+
+    <model name="r1_wall_a"><static>true</static><link name="link">
+      <pose>0 1 1.25 0 0 0</pose>
+      <collision name="c"><geometry><box><size>2 0.15 2.5</size></box></geometry></collision>
+      <visual name="v"><geometry><box><size>2 0.15 2.5</size></box></geometry></visual>
+    </link></model>
+    <model name="r1_wall_b"><static>true</static><link name="link">
+      <pose>4 1 1.25 0 0 0</pose>
+      <collision name="c"><geometry><box><size>4 0.15 2.5</size></box></geometry></collision>
+      <visual name="v"><geometry><box><size>4 0.15 2.5</size></box></geometry></visual>
+    </link></model>
+
+    <model name="r2_wall_a"><static>true</static><link name="link">
+      <pose>7.75 1 1.25 0 0 0</pose>
+      <collision name="c"><geometry><box><size>3.5 0.15 2.5</size></box></geometry></collision>
+      <visual name="v"><geometry><box><size>3.5 0.15 2.5</size></box></geometry></visual>
+    </link></model>
+    <model name="r2_wall_b"><static>true</static><link name="link">
+      <pose>11.75 1 1.25 0 0 0</pose>
+      <collision name="c"><geometry><box><size>2.5 0.15 2.5</size></box></geometry></collision>
+      <visual name="v"><geometry><box><size>2.5 0.15 2.5</size></box></geometry></visual>
+    </link></model>
+
+    <model name="r3_wall_a"><static>true</static><link name="link">
+      <pose>0 -1 1.25 0 0 0</pose>
+      <collision name="c"><geometry><box><size>2 0.15 2.5</size></box></geometry></collision>
+      <visual name="v"><geometry><box><size>2 0.15 2.5</size></box></geometry></visual>
+    </link></model>
+    <model name="r3_wall_b"><static>true</static><link name="link">
+      <pose>4 -1 1.25 0 0 0</pose>
+      <collision name="c"><geometry><box><size>4 0.15 2.5</size></box></geometry></collision>
+      <visual name="v"><geometry><box><size>4 0.15 2.5</size></box></geometry></visual>
+    </link></model>
+
+    <model name="r4_wall_a"><static>true</static><link name="link">
+      <pose>7.75 -1 1.25 0 0 0</pose>
+      <collision name="c"><geometry><box><size>3.5 0.15 2.5</size></box></geometry></collision>
+      <visual name="v"><geometry><box><size>3.5 0.15 2.5</size></box></geometry></visual>
+    </link></model>
+    <model name="r4_wall_b"><static>true</static><link name="link">
+      <pose>11.75 -1 1.25 0 0 0</pose>
+      <collision name="c"><geometry><box><size>2.5 0.15 2.5</size></box></geometry></collision>
+      <visual name="v"><geometry><box><size>2.5 0.15 2.5</size></box></geometry></visual>
+    </link></model>
+
+  </world>
+</sdf>
