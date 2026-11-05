@@ -1,0 +1,36 @@
+<launch>
+  <!-- Set navigation:=false when mapping with slam.launch -->
+  <arg name="navigation" default="true"/>
+
+  <!-- Start Gazebo simulation -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name"
+         value="$(find hospital_delivery)/worlds/hospital.world"/>
+  </include>
+
+  <!-- Load robot model -->
+  <param name="robot_description"
+         command="$(find xacro)/xacro $(find hospital_delivery)/urdf/hospital_robot.urdf"/>
+
+  <!-- Spawn the robot at the world origin (pharmacy) -->
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"
+        args="-param robot_description -urdf -model hospital_robot -x 0 -y 0 -z 0.1"/>
+
+  <!-- Publish robot transforms -->
+  <node name="robot_state_publisher"
+        pkg="robot_state_publisher"
+        type="robot_state_publisher"
+        output="screen"/>
+
+  <group if="$(arg navigation)">
+    <!-- Start navigation -->
+    <include file="$(find hospital_delivery)/launch/navigation.launch"/>
+
+    <!-- Start RViz -->
+    <node name="rviz"
+          pkg="rviz"
+          type="rviz"
+          args="-d $(find hospital_delivery)/rviz/hospital_navigation.rviz"
+          output="screen"/>
+  </group>
+</launch>
